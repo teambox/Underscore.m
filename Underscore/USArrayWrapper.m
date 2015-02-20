@@ -245,8 +245,8 @@
 
 - (USArrayWrapper *)zip
 {
-    int lenght = [self.first count];
-    NSMutableArray *finalMutableArray = [NSMutableArray arrayWithCapacity:lenght*self.array.count];
+    int length = [self.first count];
+    NSMutableArray *finalMutableArray = [NSMutableArray arrayWithCapacity:lenght * self.array.count];
     for (NSUInteger index = 0; index < lenght; index++) {
         USArrayWrapper *wrapper = self.map(^id (id obj) {
             return [obj objectAtIndex:index];
