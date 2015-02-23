@@ -142,6 +142,13 @@
     };
 }
 
++ (NSArray *(^)(NSArray *))zip
+{
+    return ^(NSArray *array) {
+        return Underscore.array(array).zip.unwrap;
+    };
+}
+
 + (NSArray *(^)(NSArray *, NSString *))pluck
 {
     return ^(NSArray *array, NSString *keyPath) {

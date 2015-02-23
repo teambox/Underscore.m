@@ -58,6 +58,7 @@
 @property (readonly) USArrayWrapper *(^each)(UnderscoreArrayIteratorBlock block);
 @property (readonly) USArrayWrapper *(^map)(UnderscoreArrayMapBlock block);
 @property (readonly) USArrayWrapper *(^zipWith)(NSArray *array, UnderscoreArrayZipWithBlock block);
+@property (readonly) USArrayWrapper *zip;
 
 @property (readonly) USArrayWrapper *(^pluck)(NSString *keyPath);
 

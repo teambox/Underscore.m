@@ -243,6 +243,19 @@
     };
 }
 
+- (USArrayWrapper *)zip
+{
+    int length = (int)[self.first count];
+    NSMutableArray *finalMutableArray = [NSMutableArray arrayWithCapacity:length * self.array.count];
+    for (NSUInteger index = 0; index < length; index++) {
+        USArrayWrapper *wrapper = self.map(^id (id obj) {
+            return [obj objectAtIndex:index];
+        });
+        [finalMutableArray addObject:wrapper.unwrap];
+    }
+    return [[USArrayWrapper alloc] initWithArray:finalMutableArray];
+}
+
 - (USArrayWrapper *(^)(NSString *))pluck
 {
     return ^USArrayWrapper *(NSString *keyPath) {
