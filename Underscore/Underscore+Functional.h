@@ -68,6 +68,7 @@
 + (NSArray *(^)(NSArray *array, UnderscoreSortBlock block))sort;
 
 + (NSDictionary *(^)(NSArray *array, UnderscoreGroupingBlock block))groupBy;
++ (NSArray *(^)(NSArray *array, NSString *key))groupByKey;
 
 #pragma mark NSDictionary style methods
 

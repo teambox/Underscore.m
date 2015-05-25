@@ -359,4 +359,22 @@
     };
 }
 
+- (USArrayWrapper *(^)(NSString *key))groupByKey
+{
+    return ^USArrayWrapper *(NSString *key) {
+        NSMutableArray *resultArray = [NSMutableArray new];
+        NSMutableArray *discarded = [NSMutableArray new];
+        
+        for (id object in self.array) {
+            if ([discarded containsObject:object]) { continue; }
+            id groupID = [object valueForKey:key];
+            NSArray *group = [self.array filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K = %@", key, groupID]];
+            [resultArray addObject:group];
+            [discarded addObjectsFromArray:group];
+        }
+        
+        return [USArrayWrapper wrap:resultArray];
+    };
+}
+
 @end

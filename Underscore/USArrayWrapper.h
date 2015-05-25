@@ -75,5 +75,6 @@
 @property (readonly) USArrayWrapper *(^sort)(UnderscoreSortBlock block);
 
 @property (readonly) USDictionaryWrapper *(^groupBy)(UnderscoreGroupingBlock block);
+@property (readonly) USArrayWrapper *(^groupByKey)(NSString *key);
 
 @end
