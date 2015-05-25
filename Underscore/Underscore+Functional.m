@@ -203,6 +203,14 @@
     };
 }
 
++ (NSArray *(^)(NSArray *, NSString *))groupByKey
+{
+    return ^(NSArray *array, NSString *key) {
+        return Underscore.array(array).groupByKey(key).unwrap;
+    };
+}
+
+
 #pragma mark NSDictionary shortcuts
 
 + (USDictionaryWrapper *(^)(NSDictionary *))dict
